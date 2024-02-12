@@ -1,57 +1,57 @@
-### 教育策略優化與閱讀系統效益評估
-- 分析對象：同一組學生連續兩年的閱讀表現
-- 目標：根據閱讀表現提出：(1)教學策略調整；(2)閱讀系統使用優化 
+[中文版 Chinese version](README_zh.md)
 
-#### 一、流程說明
-1. 匯入2020年的資料（兩個資料集）、2021年的資料（兩個資料集），清理與合併後，初步觀察（python程式碼）
-2. 以Power BI產出視覺化成果（Power BI儀表板）
-3. 以簡報呈現分析重點與提案（簡報檔）
+# Educational Strategy Optimization and Reading System Efficacy Evaluation
+- Analysis Subject: The reading performance of the same group of students over two consecutive years
+- Objective: Propose (1) adjustments to teaching strategies; (2) optimizations for the reading system usage based on reading performance
 
-#### 二、資料說明
-1. 原始資料：
-    `df2020`是2020年的所有資料（由df1和df2組成），尚未處理姓名（不能公開）
-2. 原始資料：
-    `df2021`是2021年的所有資料（由df3和df4組成），尚未處理姓名（不能公開）
-3. 完整資料：
-    `sr`（system report，由df2020和df2021合併），姓名已處理（可公開）
+## I. Process Description
+1. Import data from 2020 (two datasets) and 2021 (two datasets), clean and merge them, then make preliminary observations (Python code).
+2. Produce visual results with Power BI (Power BI dashboard).
+3. Present analysis highlights and proposals with a presentation (presentation file).
+
+## II. Data Description
+1. Original Data:
+    `df2020` contains all data from 2020 (consisting of df1 and df2), names not yet processed (cannot be disclosed).
+2. Original Data:
+    `df2021` contains all data from 2021 (consisting of df3 and df4), names not yet processed (cannot be disclosed).
+3. Complete Data:
+    `sr` (system report, merged from df2020 and df2021), names processed (can be disclosed).
     
-    - 欄位說明：
-    `student`：姓名代號
-    `year`：資料來源，有2020或2021
-    `class_year`：年級，有6或7
-    `class_name`：班級編號，有C、K或T
-    `book_planned`：計畫閱讀書籍數量
-    `book_passed`：實際閱讀完書籍數量
-    `A+`、`A`、`B`：閱讀書籍的得分
-    `planning`、`execution`、`knowledge`、`improvement`：根據閱讀表現的四個量化評分
-    `total_skills`：上述量化評分加上其他表現（不在此資料中）的綜合評分
-    `honor_given`：根據閱讀表現給予的積分
-    `final_score`：閱讀評量得分（獨立測驗，與前述閱讀表現無關）
-    `study_year`：在學紀錄，有L（只讀2020年）、N（只讀2021年）、B（兩年都在學）
+    - Field Description:
+    `student`: Name code
+    `year`: Data source year, either 2020 or 2021
+    `class_year`: Grade level, either 6 or 7
+    `class_name`: Class identifier, either C, K, or T
+    `book_planned`: Number of books planned to read
+    `book_passed`: Actual number of books read
+    `A+`, `A`, `B`: Scores obtained from reading books
+    `planning`, `execution`, `knowledge`, `improvement`: Four quantitative scores based on reading performance
+    `total_skills`: Composite score including the above quantitative scores and other performances (not included in this data)
+    `honor_given`: Points awarded based on reading performance
+    `final_score`: Reading assessment score (independent test, unrelated to the aforementioned reading performance)
+    `study_year`: Academic record, L (only read in 2020), N (only read in 2021), B (read in both years)
     
-#### 三、資料處理細節
+## III. Data Processing Details
 
-- 第一步：處理2020年的資料
+### Step One: Processing Data from 2020
 
-    1. 匯入2020年的資料（兩個資料集），合併成一個資料
-    2. 去除不會用到的欄，重新命名欄，新增一欄標記2020
-    3. 處理空值、重複值、剔除無效資料
-    4. 初步觀察：檢視分佈、關聯性、視覺化
+    1. Import data from 2020 (two datasets) and merge them into one dataset.
+    2. Remove unused columns, rename columns, and add a column to mark 2020.
+    3. Handle null values, duplicate values, and eliminate invalid data.
+    4. Initial observation: Examine distribution, correlation, visualization.
 
-- 第二步：處理2021年的資料 
+### Step Two: Processing Data from 2021
    
-    5. 處理2021年的資料，重複第一步流程
+    5. Process data from 2021, repeating the first step process.
     
-- 第三步：處理兩年的資料
+### Step Three: Processing Data from Both Years
 
-    6. 將姓名改為代號，並分類：只讀2020年（Left）、只讀2021年（New）、兩年都在學（Both）
-    7. 合併所有資料
-    8. 儲存
+    6. Change names to codes, and categorize: Only read in 2020 (Left), only read in 2021 (New), read in both years (Both).
+    7. Merge all data.
+    8. Save.
 
-- 第四步：視覺化與分析
+### Step Four: Visualization and Analysis
 
-    9. 第二次觀察：檢視分佈、關聯性、視覺化
+    9. Second observation: Examine distribution, correlation, visualization.
 
-
-
-* 補充說明：原始資料包含個資，故僅保留程式碼以供參考，最後呈現的資料和分析為**去除個資**且**調整過數據**的結果。
+* Additional Information: The original data contains personal information, so only the code is provided for reference. The final presented data and analysis are results with **personal information removed** and **data adjusted**.
